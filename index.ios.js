@@ -1,16 +1,34 @@
 import React from 'react';
-import {AppRegistry, Text} from 'react-native';
+import {AppRegistry, Text, TextInput, ScrollView, ListView} from 'react-native';
+
+import Greeting from './Greeting';
+
 
 class ReactNativeExample extends React.Component {
+    // Initialize the hardcoded data
+    constructor(props) {
+        super(props);
+        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        this.state = {
+            dataSource: ds.cloneWithRows([
+                'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+            ])
+        };
+    }
+
     render() {
         return (
-          <Text>
-              Hello World
-          </Text>
+         <ScrollView>
+             <Greeting
+                 name="You"
+             />
+             <ListView
+                 dataSource={this.state.dataSource}
+                 renderRow={(rowData) => <Text>{rowData}</Text>}
+             />
+         </ScrollView>
         );
     }
 }
-
-export default ReactNativeExample;
 
 AppRegistry.registerComponent('ReactNativeExample', () => ReactNativeExample);
