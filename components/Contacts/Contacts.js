@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import ReactNative from 'react-native';
 const {
     TouchableHighlight,
@@ -7,11 +6,13 @@ const {
     NavigatorIOS
 } = ReactNative;
 
+import ContactListView from './ContactListView'
+
 class Contacts extends Component {
     _handleNavigationRequest() {
         this.refs.nav.push({
             component: MyView,
-            title: 'Genius',
+            title: 'Add',
             passProps: { myProp: 'genius' },
         });
     }
@@ -36,9 +37,7 @@ class Contacts extends Component {
 class MyView extends Component {
     render() {
         return(
-                <Text style={{marginTop: 100, alignSelf: 'center'}}>
-                    See you on the other nav {this.props.myProp}!
-                </Text>
+            <ContactListView />
         );
     }
 }
