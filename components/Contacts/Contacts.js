@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ReactNative from 'react-native';
+import ContactAdd from './ContactAdd';
+
 const {
     TouchableHighlight,
     Text,
@@ -11,9 +13,9 @@ import ContactListView from './ContactListView'
 class Contacts extends Component {
     _handleNavigationRequest() {
         this.refs.nav.push({
-            component: MyView,
-            title: 'Add',
-            passProps: { myProp: 'genius' },
+            component: ContactAdd,
+            title: 'Add Contact',
+
         });
     }
 
@@ -24,7 +26,6 @@ class Contacts extends Component {
                 initialRoute={{
           component: MyView,
           title: 'Contacts',
-          passProps: { myProp: 'foo' },
           rightButtonTitle: 'Add',
           onRightButtonPress: () => this._handleNavigationRequest(),
         }}
