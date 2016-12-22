@@ -5,13 +5,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: 60,
-        padding: '16px 0 16px 16px'
+        padding: 16
     },
 
     textInput: {
-        borderBottom: 1,
+        borderBottomWidth: 1,
         borderColor: '#ccc',
-        padding: '0 5px '
+        paddingLeft: 5,
+        paddingRight: 5
     }
 });
 

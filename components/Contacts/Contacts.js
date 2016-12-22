@@ -8,7 +8,7 @@ const {
     NavigatorIOS
 } = ReactNative;
 
-import ContactListView from './ContactListView'
+import ContactListView from './ContactListView';
 
 class Contacts extends Component {
     _handleNavigationRequest() {
@@ -20,12 +20,13 @@ class Contacts extends Component {
     }
 
     render() {
+
         return (
             <NavigatorIOS
                 ref='nav'
                 initialRoute={{
           component: MyView,
-          title: 'Contacts',
+          title: 'Contact',
           rightButtonTitle: 'Add',
           onRightButtonPress: () => this._handleNavigationRequest(),
         }}
